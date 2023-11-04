@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    
+}
+ul li {
+    list-style: none;
+    text-align: left;
+    margin: 10px;
+    padding: 14px;
+    font-size: 1.3rem;
+    background-color: #FFFBF5;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 20px;
+}
+ul li:hover{
+    background-color: #A8DF8E;
+    transition: 1s ease-in-out;
+}
+.form{
+  
+    &--student{
+    
+    width: 500px;
+    }
+    &--h1{
+        text-align: center;
+        margin: 20px;
+        font-size: 2.5rem;
+        color: #224B0C;
+    }
+    &--add{
+        width: 70%;
+        height: 40px;
+        border: 2px solid #2B7A0B;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 6px;
+    }
+    &--btn{
+        width: 90px;
+        height: 40px;
+        border: none;
+        border-radius: 14px;
+        background-color: #3CCF4E;
+        color: #fff;
+        cursor: pointer;
+    }
+
+}
+.search--box{
+    width: 320px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #1A4D2E;
+    border-radius: 10px;
+    margin-left: 30px;
+}

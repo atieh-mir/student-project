@@ -1,11 +1,13 @@
 import { useState } from 'react'
-
+import Form from './component/Form';
+import { Search } from './component/Search';
+import { StudentList } from './component/StudentsList';
 
 function App() {
   const [value, setValue] = useState('')
   const [students,setStudents] = useState([]);
   const [searchTerm,setSearchTerm] = useState([]);
-
+  
 
   const handleOnChangeValue = (e) => {
     setValue(e.target.value);
@@ -13,7 +15,12 @@ function App() {
   }
   const handleOnSubmitForm = (e) => {
     e.preventDefault();
+   if(value.trim()){
     setStudents([...students, {id:students.length+1, name: value}])
+    setValue('');
+   }else{
+    alert("Please enter your name...")
+   }
     
   }
   const handlerSearchTerm = (e) =>{
@@ -21,23 +28,18 @@ function App() {
   }
   return (
    <div>
-    <h1>Students list</h1>
-    <form onSubmit={handleOnSubmitForm}>
-      <input  placeholder='Enter ypur name...' value={value} onChange={handleOnChangeValue}/>
-      <button type='submit'>Add</button>
-    </form>
-    <div>
-      <input onChange={handlerSearchTerm} placeholder='Search' />
-    </div>
-    <ul>
-    
-        {students
-        .filter(({name})=>name.includes(searchTerm))
-        .map(({id, name})=><li key={id}>{name}</li>
-        
-        )}
-     
-    </ul>
+    <Form
+    onAdd={handleOnSubmitForm}
+    changeValue={handleOnChangeValue}
+    value={value}
+    />
+    <Search 
+    searchStudent={handlerSearchTerm}
+    />
+   <StudentList
+              students={students}
+              searchTerm={searchTerm}
+          />
    </div>
   )
 }

@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "create": "^0.0.2"
+    "create": "^0.0.2",
+    "sass": "^1.69.5"
   }
 }
